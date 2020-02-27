@@ -12,6 +12,23 @@
 7. pip3 install PeakUtils
 8. pip3 install Pillow
 
+## Modifications
+
+In Web_Interface_Image_Processing/Web_Interface_IP/SIH/img_processing/views.py ,
+
+change the path in line 36 inside os.chdir()
+
+from 
+
+os.chdir(r'/home/mohit/Web_Interface_Image_Processing/Web_Interface_IP/SIH/img_processing')
+
+to 
+
+os.chdir(r'..appropriate_path_in_your_machine.../Web_Interface_Image_Processing/Web_Interface_IP/SIH/img_processing')
+
+where appropriate_path_in_your_machine is the location where the repository is cloned.
+
+
 ## Running the server
 
 Run *python3 manage.py runserver* in the project root folder (Web_Interface_IP/SIH/ directory)
