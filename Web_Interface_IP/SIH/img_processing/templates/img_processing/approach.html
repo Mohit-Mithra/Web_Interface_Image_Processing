@@ -1,0 +1,190 @@
+{% load static %}
+<!doctype html>
+<html>
+<head>
+    <title>Approach</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="{%static 'img_processing/upload_image_style.css'%}">
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{%static 'img_processing/index_style.css'%}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <style>
+
+      p {
+        font-size: 16px;
+        color:black;
+      }
+      .margin {
+        margin-bottom: 45px;
+      }
+      .bg-1 {
+        background-color: #1abc9c; /* Green */
+        color: #ffffff;
+      }
+      .bg-2 {
+        background-color: #474e5d; /* Dark Blue */
+        color: #ffffff;
+      }
+      .bg-3 {
+        background-color: #ffffff; /* White */
+        color: #555555;
+      }
+
+
+      default .bg-4 {
+        background-color: #2f2f2f; /* Black Gray */
+        color: #fff;
+      }
+      .container-fluid {
+        padding-top: 70px;
+        padding-bottom: 20%;
+      }
+
+      .description
+      {
+          width: 50%;
+          padding-top: 10px;
+          padding-bottom: 20px;
+      }
+
+      .navbar {
+        padding-top: 15px;
+        padding-bottom: 15px;
+        border: 0;
+        border-radius: 0;
+        margin-bottom: 0;
+        font-size: 12px;
+        letter-spacing: 5px;
+      }
+      .navbar-nav li a:hover {
+        color: #1abc9c !important;
+      }
+      #existing{
+        width: 700px;
+        display: inline-block;
+        margin: 20px auto;
+      }
+
+
+    button {
+        margin:auto;
+        display:block;
+        background-color: #E1E5E0;
+
+    }
+
+    body {
+        font: 20px Montserrat, sans-serif;
+        line-height: 1.8;
+        color: black;
+        text-align:center;
+      }
+
+    </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-inverse">
+    <div class="container">
+      <div class="navbar-header">
+        <button
+          type="button"
+          class="navbar-toggle"
+          data-toggle="collapse"
+          data-target="#myNavbar"
+        >
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="{% url 'index' %}">Home</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+
+      </div>
+    </div>
+  </nav>
+  <div class="container-fluid bg-1 text-center" id="upload">
+    <div class = "container-fluid bg-3 text-center " style="width:50%">
+        <h1 style="color:black; font-size:4vw" >Approach</h1>
+        <br><br>
+        <h3 style="color:black">Step 1 : Gathering requirements</h3>
+        <div class="container-fluid description">
+          <p>Gathered the requirements of the task. The basic functionality must have
+          an interface to upload an image, flip it and view the flipped image.
+        <br><br>
+          Additionally, certain desirable features include uploading and processing
+        multiple images at once, displaying multiple images at once in a clean and crisp
+        way and download the processed image</p>
+        </div>
+
+        <h3 style="color:black">Step 2 : Landing Page</h3>
+        <div class="container-fluid description">
+          <p>Created a landing page. This page welcomes the user to the website. It contains
+          links to the approach page as well as a brief description of the
+          website. It also hosts a link to the webpage that contains the form.</p>
+        </div>
+
+        <h3 style="color:black">Step 3 : Creating an upload form</h3>
+        <div class="container-fluid description">
+          <p>The image upload page contains a django form instance. This
+            contains an interface that allows the user to upload multiple
+          images from the local system of the user into the server for the
+          appropriate processing to be done.</p>
+        </div>
+
+        <h3 style="color:black">Step 4 : Processing the images in the Server</h3>
+        <div class="container-fluid description">
+          <p>The images uploaded by the user is then received by the
+          server in the backend. It then does the intended task (Runs a python script,
+          triggers a ML model, or any such activity). <br><br>
+          In this case, it receives uploaded the images, flips them horizontally
+          (as per the instruction given to me) and saves the images.</p>
+        </div>
+
+        <h3 style="color:black">Step 5 : Render Processed images</h3>
+        <div class="container-fluid description">
+          <p>This page accesses filenames that were uploaded by the user and
+          displays the processed images back to the user. The user can also quickly download
+          an image by clicking on the image's name displayed. </p>
+        </div>
+
+        <h3 style="color:black">Step 6 : Improving the UI</h3>
+        <div class="container-fluid description">
+          <p>Added various CSS, Bootstrap and other techniques to improve
+          the design system as well as provide a smoother user interface for the
+            website
+          </p>
+        </div>
+
+
+    </div>
+  </div>
+</body>
+</html>

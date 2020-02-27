@@ -1,0 +1,176 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Image Processing</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{%static 'img_processing/index_style.css'%}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+
+
+    <style>
+      body {
+        font: 20px Montserrat, sans-serif;
+        line-height: 1.8;
+        color: #f5f6f7;
+      }
+      p {
+        font-size: 16px;
+      }
+      .margin {
+        margin-bottom: 45px;
+      }
+      .bg-1 {
+        background-color: #1abc9c; /* Green */
+        color: #ffffff;
+        padding-top:20px;
+      }
+      .bg-2 {
+        background-color: #474e5d; /* Dark Blue */
+        color: #ffffff;
+      }
+      .bg-3 {
+        background-color: #ffffff; /* White */
+        color: #555555;
+      }
+      default .bg-4 {
+        background-color: #2f2f2f; /* Black Gray */
+        color: #fff;
+      }
+      .container-fluid {
+        padding-top: 40px;
+        padding-bottom: 300px;
+      }
+      .navbar {
+        padding-top: 15px;
+        padding-bottom: 15px;
+        border: 0;
+        border-radius: 0;
+        margin-bottom: 0;
+        font-size: 12px;
+        letter-spacing: 5px;
+      }
+      .navbar-nav li a:hover {
+        color: #1abc9c !important;
+      }
+      #existing{
+        width: 700px;
+        display: inline-block;
+        margin: 20px auto;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-inverse">
+      <div class="container">
+        <div class="navbar-header">
+          <button
+            type="button"
+            class="navbar-toggle"
+            data-toggle="collapse"
+            data-target="#myNavbar"
+          >
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="{% url 'approach' %}">Approach</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="landing-view">
+      <div class="table-div">
+        <div class="container-landing">
+          <h2 style="font-size:5vw">Web interface for image processing</h2>
+          <h1 style="font-size:x-large">
+            This interface allows user to upload images and view or download the processed image.<br>The images are processed to flip them horizontally.
+        </div>
+        <div class="go-down">
+          <a href="#upload" class="hvr-icon-hang"
+            ><i class="material-icons hvr-icon">&#xe313;</i></a
+          >
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid bg-1 text-center" id="upload">
+      <h3 class="margin" style="padding-top:200px;font-size:40px">
+        Upload images in the form below
+      </h3>
+      <div class="buttons" style="padding-bottom:100px;">
+
+        <a href="{% url 'upload_image' %}" class="btn btn-default btn-lg"> Upload</a>
+      </div>
+
+    </div>
+
+
+
+    <div id="coords">
+      <h3>X Coordinate:</h3>
+      <div class="content" id="x_coord"></div>
+
+      <h3>Y Coordinate:</h3>
+      <div class="content" id="y_coord"></div>
+
+      <h3>Result:</h3>
+      <div class="content" id="result"></div>
+    </div>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script>
+      let x = 500, y = 500;
+
+      const image = document.getElementById('existing');
+      image.addEventListener('click', (event) => {
+        console.log(event);
+        x = (event.offsetX * 600) / 2118;
+        y = (event.offsetY * 600) / 2135;
+        let coord = {
+          x,
+          y
+        }
+
+        document.getElementById('x_coord').innerText = x
+        document.getElementById('y_coord').innerText = y
+        let value = Math.floor((Math.random() * 2) + 1);
+        document.getElementById('result').innerText = value
+        document.getElementById('coords').setAttribute('style', 'display: block; color: black;')
+
+
+      })
+    </script>
+  </body>
+</html>
