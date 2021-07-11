@@ -1,4 +1,4 @@
-# Web_Interface_IP
+# Web Interface for Image Processing
 
 ## Setup Instructions
 
@@ -14,23 +14,20 @@
 
 ## Modifications
 
-In Web_Interface_Image_Processing/Web_Interface_IP/SIH/img_processing/views.py ,
+In `Web_Interface_Image_Processing/Web_Interface_IP/SIH/img_processing/views.py`, change the path in line 36 inside os.chdir() from 
 
-change the path in line 36 inside os.chdir()
-
-from 
-
-os.chdir(r'/home/mohit/Web_Interface_Image_Processing/Web_Interface_IP/SIH/img_processing')
+`os.chdir(r'/home/mohit/Web_Interface_Image_Processing/Web_Interface_IP/SIH/img_processing')`
 
 to 
 
-os.chdir(r'..appropriate_path_in_your_machine.../Web_Interface_Image_Processing/Web_Interface_IP/SIH/img_processing')
+`os.chdir(r'..appropriate_path_in_your_machine.../Web_Interface_Image_Processing/Web_Interface_IP/SIH/img_processing')`
 
 where appropriate_path_in_your_machine is the location where the repository is cloned.
 
 
 ## Running the server
 
-Run *python3 manage.py runserver* in the project root folder (Web_Interface_IP/SIH/ directory)
-Then visit 127.0.0.1:8000/
+
+Run `python3 manage.py runserver` in the project root folder (Web_Interface_IP/SIH/ directory) <br>
+Navigate to 127.0.0.1:8000/
 
